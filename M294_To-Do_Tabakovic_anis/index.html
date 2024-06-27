@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Liste</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="background-clouds">
+    <img src="cloud.png" class="cloud left-cloud1" alt="Cloud">
+    <img src="cloud.png" class="cloud left-cloud2" alt="Cloud">
+    <img src="cloud.png" class="cloud left-cloud3" alt="Cloud">
+    <img src="cloud.png" class="cloud left-cloud4" alt="Cloud">
+    <img src="cloud.png" class="cloud left-cloud5" alt="Cloud">
+    <img src="cloud.png" class="cloud left-cloud6" alt="Cloud">
+    <img src="cloud.png" class="cloud right-cloud1" alt="Cloud">
+    <img src="cloud.png" class="cloud right-cloud2" alt="Cloud">
+    <img src="cloud.png" class="cloud right-cloud3" alt="Cloud">
+    <img src="cloud.png" class="cloud right-cloud4" alt="Cloud">
+    <img src="cloud.png" class="cloud right-cloud5" alt="Cloud">
+    <img src="cloud.png" class="cloud right-cloud6" alt="Cloud">
+</div>
+<div class="container">
+    <h1>To-Do Liste</h1>
+    <form id="todo-form">
+        <input type="text" id="title" placeholder="Titel (Max: 255)" maxlength="255" required>
+        <textarea id="description" placeholder="Beschreibung" required></textarea>
+        <input type="text" id="author" placeholder="Autor (Max: 20)" maxlength="20" required>
+        <select id="category" required>
+            <option value="">Kategorie wählen</option>
+            <option value="Sport">Sport</option>
+            <option value="Reisen">Reisen</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Arbeit">Arbeit</option>
+            <option value="Freizeit">Freizeit</option>
+        </select>
+        <label>
+            <input type="checkbox" id="important"> Wichtig
+        </label>
+        <label>
+            <input type="checkbox" id="urgent"> Dringend
+        </label>
+        <label for="start-date">Startdatum:</label>
+        <input type="date" id="start-date" required>
+        <label for="end-date">Enddatum:</label>
+        <input type="date" id="end-date" required>
+        <label for="progress">Fortschritt:</label>
+        <input type="number" id="progress" min="0" max="100" value="0" required>
+        <button type="submit">Hinzufügen</button>
+    </form>
+    <div class="divider"></div>
+    <input type="text" id="search" placeholder="Suchen">
+</div>
+<div id="todo-list" class="todo-list-container">
+    <!-- To-Do-Items werden hier hinzugefügt -->
+</div>
+
+
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="edit-form">
+            <input type="hidden" id="edit-index">
+            <input type="text" id="edit-title" placeholder="Titel (Max: 255)" maxlength="255" required>
+            <textarea id="edit-description" placeholder="Beschreibung" required></textarea>
+            <input type="text" id="edit-author" placeholder="Autor (Max: 20)" maxlength="20" required>
+            <select id="edit-category" required>
+                <option value="">Kategorie wählen</option>
+                <option value="Sport">Sport</option>
+                <option value="Reisen">Reisen</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Arbeit">Arbeit</option>
+                <option value="Freizeit">Freizeit</option>
+            </select>
+            <label>
+                <input type="checkbox" id="edit-important"> Wichtig
+            </label>
+            <label>
+                <input type="checkbox" id="edit-urgent"> Dringend
+            </label>
+            <label for="edit-start-date">Startdatum:</label>
+            <input type="date" id="edit-start-date" required>
+            <label for="edit-end-date">Enddatum:</label>
+            <input type="date" id="edit-end-date" required>
+            <label for="edit-progress">Fortschritt:</label>
+            <input type="number" id="edit-progress" min="0" max="100" value="0" required>
+            <button type="submit">Speichern</button>
+        </form>
+    </div>
+</div>
+
+<div id="view-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="view-content"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
